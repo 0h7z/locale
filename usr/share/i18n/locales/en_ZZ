@@ -1,0 +1,123 @@
+comment_char %
+escape_char /
+
+% English language locale, based on C and zh_ZZ locale.
+% Author    	Heptazhou
+% Website   	<https://github.com/Heptazhou/locale>
+
+LC_IDENTIFICATION
+title       	"English language locale"
+source      	""
+address     	""
+contact     	""
+email       	""
+language    	"English"
+territory   	"Earth"
+application 	"UTC  UTF-8  ISO 8601"
+revision    	"2.0"
+date        	"2020-06-28"
+
+category    	"i18n:2012";LC_IDENTIFICATION
+category    	"i18n:2012";LC_CTYPE
+category    	"i18n:2012";LC_COLLATE
+category    	"i18n:2012";LC_TIME
+category    	"i18n:2012";LC_NUMERIC
+category    	"i18n:2012";LC_MONETARY
+category    	"i18n:2012";LC_MESSAGES
+category    	"i18n:2012";LC_PAPER
+category    	"i18n:2012";LC_NAME
+category    	"i18n:2012";LC_ADDRESS
+category    	"i18n:2012";LC_TELEPHONE
+category    	"i18n:2012";LC_MEASUREMENT
+END LC_IDENTIFICATION
+
+LC_CTYPE
+copy "zh_ZZ"
+END LC_CTYPE
+
+LC_COLLATE
+copy "zh_ZZ"
+END LC_COLLATE
+
+LC_MONETARY
+copy "zh_ZZ"
+END LC_MONETARY
+
+LC_NUMERIC
+copy "zh_ZZ"
+END LC_NUMERIC
+
+LC_TIME
+% This is the ISO/IEC 14652 "i18n" definition for the LC_TIME category.
+% Weekday and week numbering according to ISO 8601
+abday   	"1";"2";"3";"4";"5";"6";"7"
+day     	"1";"2";"3";"4";"5";"6";"7"
+abmon   	"01";"02";"03";"04";"05";"06";"07";"08";"09";"10";"11";"12"
+mon     	"01";"02";"03";"04";"05";"06";"07";"08";"09";"10";"11";"12"
+am_pm   	"";""
+
+% Date formats following ISO 8601
+% Appropriate date and time representation (%c)
+d_t_fmt     	"%F %T"
+%
+% Appropriate date representation (%x)
+d_fmt       	"%F"
+%
+% Appropriate time representation (%X)
+t_fmt       	"%T"
+t_fmt_ampm  	""
+%
+% Appropriate date representation (date(1))
+% date_fmt    	"%F %T %Z"
+date_fmt    	"%F %T %Z W%V-%u %j"
+
+% Week description, consists of three fields:
+% 1. Number of days in a week.
+% 2. Gregorian date that is a first weekday (19971130 for Sunday, 19971201 for Monday).
+% 3. The weekday number to be contained in the first week of the year.
+%
+% ISO 8601 conforming applications should use the values 7, 19971201 (a Monday), and 4 (Thursday), respectively.
+week            	7;19971201;1
+first_weekday   	1
+first_workday   	1
+END LC_TIME
+
+LC_MESSAGES
+copy "zh_ZZ"
+END LC_MESSAGES
+
+LC_PAPER
+copy "zh_ZZ"
+END LC_PAPER
+
+LC_NAME
+% This is the ISO/IEC 14652 "i18n" definition for the LC_NAME category.
+% (also used in the built in C/POSIX locale in glibc/locale/C-name.c)
+name_fmt    	"%d%t%g%t%M%t%f"
+name_gen    	""
+name_mr     	"Mr."
+name_mrs    	"Mrs."
+name_miss   	"Miss."
+name_ms     	"Ms."
+END LC_NAME
+
+LC_ADDRESS
+% This is the ISO/IEC 14652 "i18n" definition for the LC_ADDRESS category.
+% (also used in the built in C/POSIX locale in glibc/locale/C-address.c)
+postal_fmt  	"%n%N%a%N%d%N%f%N%r%t%e%t%b%N%h%t%s%N%l%t%z%N%T%t%S%N%c%N"
+
+% lang_name   	"English"
+lang_name   	"<U0045><U006E><U0067><U006C><U0069><U0073><U0068>"
+lang_ab     	"en"
+lang_term   	"eng"
+lang_lib    	"eng"
+END LC_ADDRESS
+
+LC_TELEPHONE
+copy "zh_ZZ"
+END LC_TELEPHONE
+
+LC_MEASUREMENT
+copy "zh_ZZ"
+END LC_MEASUREMENT
+
