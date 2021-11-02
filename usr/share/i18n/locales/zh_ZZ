@@ -1,0 +1,185 @@
+comment_char %
+escape_char /
+
+% Chinese language locale, based on C, POSIX, i18n, zh_CN, and zh_SG locale.
+% Author    	Heptazhou
+% Website   	<https://github.com/0h7z/locale>
+
+LC_IDENTIFICATION
+title       	"Chinese language locale"
+source      	""
+address     	""
+contact     	""
+email       	""
+language    	"Chinese"
+territory   	"Earth"
+application 	"UTC  UTF-8  ISO 8601"
+revision    	"2.0"
+date        	"2020-06-28"
+
+category    	"i18n:2012";LC_IDENTIFICATION
+category    	"i18n:2012";LC_CTYPE
+category    	"i18n:2012";LC_COLLATE
+category    	"i18n:2012";LC_TIME
+category    	"i18n:2012";LC_NUMERIC
+category    	"i18n:2012";LC_MONETARY
+category    	"i18n:2012";LC_MESSAGES
+category    	"i18n:2012";LC_PAPER
+category    	"i18n:2012";LC_NAME
+category    	"i18n:2012";LC_ADDRESS
+category    	"i18n:2012";LC_TELEPHONE
+category    	"i18n:2012";LC_MEASUREMENT
+END LC_IDENTIFICATION
+
+LC_CTYPE
+copy "zh_CN"
+END LC_CTYPE
+
+LC_COLLATE
+% ISO/IEC 14651 collation sequence
+copy "iso14651_t1_pinyin"
+END LC_COLLATE
+
+LC_MONETARY
+% int_curr_symbol     	"XDR " ¤
+% currency_symbol     	"<U0024>" "<U00A4>" "<U00A5>" $ ¤ ¥
+
+% This is the 14652 i18n fdcc-set definition for the LC_MONETARY category (except for the int_curr_symbol and currency_symbol,
+% they are empty in the 14652 i18n fdcc-set definition and also empty in glibc/locale/C-monetary.c.).
+int_curr_symbol     	"XDR "
+currency_symbol     	"<U00A4>"
+mon_decimal_point   	"<U002E>"
+mon_thousands_sep   	"<U002C>"
+mon_grouping        	3
+positive_sign       	"+"
+negative_sign       	"-"
+int_frac_digits     	2
+frac_digits         	2
+p_cs_precedes       	1
+int_p_sep_by_space  	0
+p_sep_by_space      	0
+n_cs_precedes       	1
+int_n_sep_by_space  	0
+n_sep_by_space      	0
+p_sign_posn         	4
+n_sign_posn         	4
+END LC_MONETARY
+
+LC_NUMERIC
+% This is the POSIX Locale definition for the LC_NUMERIC category.
+decimal_point   	"<U002E>"
+thousands_sep   	"<U002C>"
+grouping        	3
+END LC_NUMERIC
+
+LC_TIME
+% This is the ISO/IEC 14652 "i18n" definition for the LC_TIME category.
+% Weekday and week numbering according to ISO 8601
+% abday   	"1";"2";"3";"4";"5";"6";"7"
+% day     	"1";"2";"3";"4";"5";"6";"7"
+% abmon   	"01";"02";"03";"04";"05";"06";"07";"08";"09";"10";"11";"12"
+% mon     	"01";"02";"03";"04";"05";"06";"07";"08";"09";"10";"11";"12"
+abday   	"<U5468><U4E00>";"<U5468><U4E8C>";"<U5468><U4E09>";"<U5468><U56DB>";"<U5468><U4E94>";"<U5468><U516D>";"<U5468><U65E5>"
+day     	"<U661F><U671F><U4E00>";"<U661F><U671F><U4E8C>";"<U661F><U671F><U4E09>";"<U661F><U671F><U56DB>";/
+        	"<U661F><U671F><U4E94>";"<U661F><U671F><U516D>";"<U661F><U671F><U65E5>"
+abmon   	"<U4E00><U6708>";"<U4E8C><U6708>";"<U4E09><U6708>";"<U56DB><U6708>";"<U4E94><U6708>";"<U516D><U6708>";/
+        	"<U4E03><U6708>";"<U516B><U6708>";"<U4E5D><U6708>";"<U5341><U6708>";"<U51AC><U6708>";"<U814A><U6708>"
+mon     	"<U4E00><U6708>";"<U4E8C><U6708>";"<U4E09><U6708>";"<U56DB><U6708>";"<U4E94><U6708>";"<U516D><U6708>";/
+        	"<U4E03><U6708>";"<U516B><U6708>";"<U4E5D><U6708>";"<U5341><U6708>";"<U5341><U4E00><U6708>";"<U5341><U4E8C><U6708>"
+am_pm   	"";""
+
+% Date formats following ISO 8601
+% (%F = %+4Y-%m-%d; %T = %H:%M:%S)
+%
+% Appropriate date and time representation (%c)
+d_t_fmt     	"%F %T W-%u"
+% %Y年%m月%d日 %H时%M分%S秒
+% d_t_fmt     	"%Y<U5E74>%m<U6708>%d<U65E5> %H<U65F6>%M<U5206>%S<U79D2>"
+%
+% Appropriate date representation (%x)
+d_fmt       	"%F W-%u %j"
+% %Y年%m月%d日
+% d_fmt       	"%Y<U5E74>%m<U6708>%d<U65E5>"
+%
+% Appropriate time representation (%X)
+t_fmt       	"%T %Z"
+% %H时%M分%S秒 %Z
+% t_fmt       	"%H<U65F6>%M<U5206>%S<U79D2> %Z"
+t_fmt_ampm  	""
+%
+% Appropriate date representation (date(1))
+% date_fmt    	"%F %T %Z"
+date_fmt    	"%F %T %Z W-%u %j"
+% %Y年%m月%d日 %H时%M分%S秒 %Z
+% date_fmt    	"%Y<U5E74>%m<U6708>%d<U65E5> %H<U65F6>%M<U5206>%S<U79D2> %Z"
+
+% ISO 30112 week description, consists of three fields:
+% 1. Number of days in a week.
+% 2. Gregorian date that is a first weekday (19971130 for Sunday, 19971201 for Monday).
+% 3. The weekday number to be contained in the first week of the year, i.e., the number of days required
+%        in a week for it to be considered the first week of the year.
+%
+% ISO 8601 conforming applications should use the values 7, 19971201 (a Monday), and 4 (Thursday), respectively.
+week            	7;19971201;1
+first_weekday   	1
+first_workday   	1
+END LC_TIME
+
+LC_MESSAGES
+% This is the POSIX Locale definition for the LC_MESSAGES category.
+% yesexpr 	"^[yY]"
+yesexpr 	"<U005E><U005B><U0079><U0059><U005D>"
+% noexpr  	"^[nN]"
+noexpr  	"<U005E><U005B><U006E><U004E><U005D>"
+% yesstr  	"Yes"
+yesstr  	"<U0059><U0065><U0073>"
+% nostr   	"No"
+nostr   	"<U004E><U006F>"
+END LC_MESSAGES
+
+LC_PAPER
+% This is the ISO/IEC 14652 "i18n" definition for the LC_PAPER category.
+% (A4 paper, this is also used in the built in C/POSIX locale in glibc/locale/C-paper.c)
+height  	297
+width   	210
+END LC_PAPER
+
+LC_NAME
+% This is the ISO/IEC 14652 "i18n" definition for the LC_NAME category.
+% (also used in the built in C/POSIX locale in glibc/locale/C-name.c)
+name_fmt    	"%d%t%f%t%M%t%g"
+name_gen    	""
+name_mr     	"Mr."
+name_mrs    	"Mrs."
+name_miss   	"Miss."
+name_ms     	"Ms."
+% name_mr     	"<U5148><U751F>"
+% name_mrs    	"<U592A><U592A>"
+% name_miss   	"<U5C0F><U59D0>"
+% name_ms     	"<U5973><U58EB>"
+END LC_NAME
+
+LC_ADDRESS
+% This is the ISO/IEC 14652 "i18n" definition for the LC_ADDRESS category.
+% (also used in the built in C/POSIX locale in glibc/locale/C-address.c)
+postal_fmt  	"%c%N%S%t%T%N%l%t%z%N%s%t%h%N%b%t%e%t%r%N%f%N%d%N%n%N%a%N"
+
+% lang_name   	"中文"
+lang_name   	"<U4E2D><U6587>"
+lang_ab     	"zh"
+lang_term   	"zho"
+lang_lib    	"chi"
+END LC_ADDRESS
+
+LC_TELEPHONE
+% This is the ISO/IEC 14652 "i18n" definition for the LC_TELEPHONE category.
+% (also used in the built in C/POSIX locale in glibc/locale/C-telephone.c)
+tel_int_fmt 	"+%c %a%t%l"
+END LC_TELEPHONE
+
+LC_MEASUREMENT
+% This is the ISO/IEC 14652 "i18n" definition for the LC_MEASUREMENT category.
+% (metric, this is also used in the built in C/POSIX locale in glibc/locale/C-measurement.c)
+measurement 	1
+END LC_MEASUREMENT
+
