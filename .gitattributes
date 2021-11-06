@@ -1,0 +1,9 @@
+
+* -linguist-documentation -linguist-vendored linguist-detectable
+/.gitattributes export-ignore
+/README.md export-ignore
+/usr/share/i18n/charmaps/ export-ignore
+
+/usr/share/i18n/locales/* export-ignore
+/usr/share/i18n/locales/en_ZZ* -export-ignore
+/usr/share/i18n/locales/zh_ZZ* -export-ignore
